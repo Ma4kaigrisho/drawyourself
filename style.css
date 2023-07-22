@@ -1,0 +1,146 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* having the whole face in the center */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: hsl(200, 50%, 12%);
+}
+.head{
+    background-color: hsl(19, 76%, 88%); 
+    height: 340px;
+    width: 225px;
+    border-radius: 70% 70% 100% 100%;/* giving more of a rounded shape to the face */
+    display: flex;
+    justify-content: center;/* every element withing the head will be centered */
+    align-items: center;
+}
+.eyes, .brows{
+    content: '';
+    position : absolute;
+    width: 195px;
+    display: flex;
+    justify-content: space-between;/* these work on both as they separate them from each other */
+}
+.eye{
+    background-color: white;
+    height: 35px;
+    width: 65px;
+    border-radius: 100%;/* giving both eyes a rounded look*/
+    border-top: 3px solid hsl(19,46%,68%);
+    border-bottom: 3px solid hsl(19,46%,68%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;/* hides the overflow of the color*/
+    position: relative;
+}
+.eye::before{/* eye color */
+    content: '';
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background-color:#a18365;
+    border-radius: 100%;
+    margin-bottom: 5px;/* this will make the eye to look more sideways since it's mnot very good looking when the face stares at you*/
+    margin-right: 5px;
+}
+.eye::after{/* pupil*/
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 100%;
+    margin-right: 15px;
+    margin-bottom: 7px;
+}
+.brow{
+    width: 65px;
+    height: 32px;
+    border-top: 10px solid rgb(27, 27, 27);/* background color is not needed here, only a border that get a color and size*/
+    border-radius: 100%;
+    margin-bottom: 35px;
+}
+.nose{
+    position: absolute;
+    border: 4px solid hsl(19,46%,68%);
+    width: 40px;
+    height: 30px;
+    border-radius: 0 0 100% 100%;
+    border-top: none;/* removes the top border so that it gets a nose look, otherwise it will look like a square*/
+    margin-top: 100px;/* getting the nose lower*/
+}
+.mouth{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    margin-top: 225px;/*moving the mouth lower*/
+    border-radius: 20% 20% 100% 100%;/* making the ointainer more rounded so that it looks more like a mounth*/
+    border: 4px solid hsl(19,46%,68%);/* the border is the lips*/
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 2px;
+}
+.ears{
+    z-index: -1;/*moving the ears behind the head*/
+    position: absolute;
+    width: 265px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.ear{
+    width: 25px;
+    height: 70px;
+    border: 2px solid hsl(19, 46%, 68%);
+    background: hsl(19,76%,85%);
+    border-radius: 0 100% 100% 0;
+}
+.ear:first-child{
+    border-radius: 100% 0 0 100%;/*giving different borders to the different ears since the exact same shape won't work on both sides*/
+}
+.hair{
+    position: absolute;
+    width: 225px;
+    height: 100px;
+    background-color: hsl(27, 33%, 28%);
+    margin-bottom: 300px;
+    border-radius: 70% 100% 0 0;
+}
+.hair::before, .hair::after{
+    content: '';
+    position: absolute;
+    background-color: hsl(27, 33%, 28%);
+    height: 75px;
+    width: 10px;
+    margin-top: 100px;
+}
+.hair::after{
+    right: 0;
+}
+.hair-corner{
+    position: absolute;
+    width: 100%;
+}
+.hair-corner::before, .hair-corner::after{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: hsl(27, 33%, 28%);
+    top: 92px;
+    left: 5px;
+}
+.hair-corner::after{
+    left:initial;
+    right: 5px;
+    transform: rotate(-45deg);
+}
+/* position absolute is used everywhere so that the containers can stack on each other*/
