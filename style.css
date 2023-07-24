@@ -1,3 +1,13 @@
+@keyframes lift{
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(-150px);}
+    100%{transform: translateY(0px);}
+}
+@keyframes upperlift{
+    0%{transform: rotate(-40deg);}
+    50%{transform: rotate(-60deg);}
+    100%{transform: rotate(-40deg);}
+}
 *, *::before, *::after{
     box-sizing: border-box;
 }
@@ -171,7 +181,7 @@ body{
     width: 80px;
     height: 70px;
     background-color: hsl(19, 76%, 88%); 
-    bottom: 95px;
+    bottom: 170px;
     border-radius: 0 0 25% 25%;
 }
 .neckline{
@@ -181,7 +191,8 @@ body{
     border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
 	border-top: 50px solid hsl(19, 76%, 88%);
-    top: 170px;
+    border-radius: 100%;
+    top: 161px;
     overflow: hidden;
 }
 .torso{
@@ -198,7 +209,7 @@ body{
     align-items: center;
     background-color: rgb(99, 99, 202);
     width: 250px;
-    height: 150px;
+    height: 213px;
     border-radius: 50% 50% 0 0;
     top: 165px;
 }
@@ -240,4 +251,50 @@ body{
     margin-bottom: 332px;
     transform: rotate(-105deg);
 }
+.dumb{
+    position: absolute;
+    height: 200px;
+    width: auto;
+    animation: lift 2s infinite;
+    left: 130px;
+    top: 70px;
+    transform: rotate(10deg);
+}
+.hand{
+    position: absolute;
+}
+.shoulder{
+    position: absolute;
+    height: 30px;
+    width: 40px;
+    background-color: rgb(99, 99, 202);
+    top: 180px;
+    border-radius: 100% 100% 0 0;
+    transform: rotate(-40deg);
+    left: 80px;
+    animation: upperlift 2s infinite;
+}
+.upperarm{
+    position: absolute;
+    width: 40px;
+    height: 140px;
+    background-color: hsl(19, 76%, 88%); 
+    border-radius: 10%;
+    top: 186px;
+    left: 135px;
+    transform: rotate(-40deg);
+    animation: upperlift 2s infinite;
+}
+.forearm{
+    position: absolute;
+    width: 40px;
+    height: 140px;
+    background-color: hsl(19, 76%, 88%); 
+    border-radius: 10%;
+    top: 180px;
+    left: 190px;
+    transform: rotate(10deg);
+    animation: lift 2s infinite;
+}
+
 /* position absolute is used everywhere so that the containers can stack on each other*/
